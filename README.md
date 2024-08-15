@@ -29,6 +29,7 @@ Download videos from Streaming Platforms
       - currently only supports:
            - dailymotion
            - PH
+           - RTHK
    2. download.py
        1. check the response inside the request for m3u8 file
        2. find the first and last number of video fragments
