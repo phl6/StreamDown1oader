@@ -30,9 +30,9 @@ def sortFiles(directory):
     sortedStr = sorted(os.listdir(directory), key=lambda x: int(x.split('.')[0]) if x.split('.')[0].isdigit() else float('inf'))
     return [f'{directory}/{item}' for item in sortedStr]
 
-def merge(tsFiles, output):
+def merge(tsFiles, output, fileFormatExtension):
     # Create a command to merge the TS files using ffmpeg
-    outputFile = output + ".mp4"
+    outputFile = output + fileFormatExtension
     command = ['ffmpeg', '-i', 'concat:' + '|'.join(tsFiles), '-c', 'copy', outputFile]
     subprocess.call(command)
 
