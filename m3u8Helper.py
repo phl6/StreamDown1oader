@@ -31,6 +31,7 @@ def sortFiles(directory):
     return [f'{directory}/{item}' for item in sortedStr]
 
 def merge(tsFiles, output, fileFormatExtension):
+    print(f'Merging {len(tsFiles)} files into {output}')
     # Create a command to merge the TS files using ffmpeg
     outputFile = output + fileFormatExtension
     command = ['ffmpeg', '-i', 'concat:' + '|'.join(tsFiles), '-c', 'copy', outputFile]
